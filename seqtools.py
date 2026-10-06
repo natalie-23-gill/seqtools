@@ -2,7 +2,7 @@
 
 import sys
 
-COMPLEMENT = {"A": "T", "T": "A", "G": "C", "C": "G"}
+COMPLEMENT = {"A": "T", "T": "A", "G": "C", "C": "G", "N": "N"}
 
 
 def read_fasta(path):
