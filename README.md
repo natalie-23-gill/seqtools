@@ -2,34 +2,32 @@
 
 A small Python script for working with DNA sequences, used in the AI Fluency for Biologists workshop to practice reviewing changes made by a coding agent. Not meant as a real tool.
 
-It reads a FASTA file and reports the length and GC content of each sequence. It uses only the Python standard library.
+It reads a FASTA file and reports the length and GC content of each sequence. It uses only the Python standard library. pytest is the only development dependency.
 
 ## Setup
 
-You need Python 3.9 or later and git.
+You need git and [uv](https://docs.astral.sh/uv/getting-started/installation/). uv installs the right Python version for you.
 
 ```bash
-# Put the folder under version control so you can review every change
+git clone https://github.com/natalie-23-gill/seqtools.git
 cd seqtools
-git init
-git add .
-git commit -m "Starting point"
 
-# Install pytest to run the tests
-python3 -m pip install -r requirements.txt
+# Create the environment and install pytest
+uv sync
 ```
 
 Check that everything works:
 
 ```bash
-python3 seqtools.py data/example.fasta
-python3 -m pytest
+uv run seqtools.py data/example.fasta
+uv run pytest
 ```
 
 ## Files
 
 - `seqtools.py`: the functions `read_fasta`, `reverse_complement`, and `gc_content`, plus a command-line entry point
 - `tests/test_seqtools.py`: tests for each function
+- `pyproject.toml` and `uv.lock`: the project settings and the exact package versions
 - `data/example.fasta`: four short sequences
     - `ins_fragment`: the first 90 bases of the human insulin coding sequence (NM_000207.3)
     - `gapdh_fragment`: the first 90 bases of the human GAPDH coding sequence (NM_002046.7), in lowercase
@@ -44,8 +42,8 @@ Do each task the same way:
 2. Ask the agent to make a plan before it changes anything. Read the plan and correct it.
 3. Let the agent make the change.
 4. Read the diff in your IDE or with `git diff`. Make sure you understand every line.
-5. Run the tests.
-6. Commit the change if you accept it. Run `git restore .` to discard it.
+5. Run the tests with `uv run pytest`.
+6. Commit the change if you accept it. To discard it, run `git restore .` and then `git clean -fd` to remove new files.
 
 ### Task 1: Add a translate function
 
@@ -53,7 +51,7 @@ Do each task the same way:
 
 Questions to answer from the plan and the diff:
 
-- Did the agent add a new dependency? Do you want one?
+- Did the agent add a new dependency to `pyproject.toml`? Do you want one?
 - What happens when the sequence length is not a multiple of 3?
 - What happens at a stop codon?
 - Did the agent add tests?
