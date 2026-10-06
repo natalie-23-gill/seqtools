@@ -1,0 +1,8 @@
+>ins_fragment Human insulin coding sequence, first 90 bases
+ATGGCCCTGTGGATGCGCCTCCTGCCCCTGCTGGCGCTGCTGGCCCTCTGGGGACCTGACCCAGCCGCAGCCTTTGTGAACCAACACCTG
+>gapdh_fragment Lowercase sequence copied from a genome browser
+atggggaaggtgaaggtcggagtcaacggatttggtcgtattgggcgcctggtcaccagggctgcttttaactctggtaaagtggatatt
+>contig_7 Assembly contig with unresolved bases
+GCGCGCATGCNNNNNNNNNNNNNNNNNNNNGCGGCCGCTTGCGGCGCATCGCGNNNNNNNNNNGCGCCGCGGCATGC
+>low_gc_region AT-rich intergenic region
+ATATTTAAATATTATAAATTTATATAATTTATAAATATTTAAATTATATTTA
